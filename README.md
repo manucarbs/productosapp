@@ -3,7 +3,6 @@
 App móvil de gestión de productos para la evaluación práctica de DAM235.
 Consume la API REST `apirestdemo` (Spring Boot + JWT) con Retrofit y Gson.
 
-**Grupo:** [nombres de los integrantes]
 
 ## Requisitos
 
