@@ -5,12 +5,28 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Productos"
-        android:textSize="26sp"
-        android:textStyle="bold" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mi inventario"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Cerrar sesión" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvEstado"
@@ -20,6 +36,14 @@
         android:text="Cargando..."
         android:textColor="#555555"
         android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnAgregar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minHeight="48dp"
+        android:text="+ Agregar producto" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvProductos"

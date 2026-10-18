@@ -14,11 +14,18 @@ import edu.sv.ues.dam235.productosapp.models.Product;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
-    private final List<Product> productos;
-
-    public ProductAdapter(List<Product> productos) {
-        this.productos = productos;
+    public interface OnProductClickListener {
+        void onProductClick(Product producto);
     }
+
+    private final List<Product> productos;
+    private final OnProductClickListener listener;
+
+    public ProductAdapter(List<Product> productos, OnProductClickListener listener) {
+        this.productos = productos;
+        this.listener = listener;
+    }
+
 
     @NonNull
     @Override
@@ -35,6 +42,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         String estado = producto.isStatus() ? "Activo" : "Inactivo";
         holder.tvDetalle.setText("Código: " + producto.getCode() + " · " + estado);
+        holder.itemView.setOnClickListener(v -> listener.onProductClick(producto));
     }
 
     @Override
