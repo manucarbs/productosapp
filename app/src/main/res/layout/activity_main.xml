@@ -56,5 +56,13 @@
             android:minHeight="48dp"
             android:text="Entrar" />
 
+        <Button
+            android:id="@+id/btnIrRegistro"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="¿No tienes cuenta? Crear cuenta" />
+
     </LinearLayout>
 </ScrollView>

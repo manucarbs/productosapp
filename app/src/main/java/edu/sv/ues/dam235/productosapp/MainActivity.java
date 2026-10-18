@@ -30,12 +30,16 @@ public class MainActivity extends AppCompatActivity {
         etPass = findViewById(R.id.etPass);
         btnLogin = findViewById(R.id.btnLogin);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener()  {
+
             @Override
             public void onClick(View v) {
                 hacerLogin();
             }
         });
+
+        findViewById(R.id.btnIrRegistro).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, RegisterActivity.class)));
     }
 
     private void hacerLogin() {

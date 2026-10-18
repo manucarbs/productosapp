@@ -14,6 +14,7 @@ import edu.sv.ues.dam235.productosapp.models.ProductRequest;
 import retrofit2.http.DELETE;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import edu.sv.ues.dam235.productosapp.models.RegisterRequest;
 
 public interface ApiService {
 
@@ -38,4 +39,7 @@ public interface ApiService {
     @DELETE("products/{code}")
     Call<Void> deleteProduct(@Header("Authorization") String authorization,
                              @Path("code") int code);
+
+    @POST("auth/register")
+    Call<Void> register(@Body RegisterRequest request);
 }
